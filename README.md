@@ -1,1 +1,1 @@
-# Full Python Web App
+# Dash Dashboard Boilerplate
