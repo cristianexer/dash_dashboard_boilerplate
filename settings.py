@@ -1,3 +1,15 @@
-APP_NAME = 'Boilerplate'
-APP_PORT = 3000
-APP_DEBUG = True
+
+from dotenv import load_dotenv
+import os
+from types import SimpleNamespace
+
+
+def settings():
+    load_dotenv(verbose=True)
+    ns = dict(
+        APP_NAME=os.getenv('APP_NAME', 'DASH Dashboard Template'),
+        APP_PORT=os.getenv('APP_PORT', 3000),
+        APP_DEBUG=os.getenv('APP_DEBUG', True)
+    )
+
+    return SimpleNamespace(**ns)

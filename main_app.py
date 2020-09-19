@@ -6,9 +6,13 @@ from dash.dependencies import Input, Output
 from routes import routes
 from utils.styles import CONTENT_STYLE
 from components.sidebar import sidebar
-import settings
+from settings import settings
 
-app = dash.Dash(external_stylesheets=[dbc.themes.LITERA])
+sets = settings()
+
+app = dash.Dash(name=sets.APP_NAME, external_stylesheets=[dbc.themes.LITERA])
+
+server = app.server
 
 content = html.Div(id="page-content", style=CONTENT_STYLE)
 
@@ -55,4 +59,4 @@ def render_page_content(pathname):
 
 
 if __name__ == "__main__":
-    app.run_server(port=settings.APP_PORT, debug=settings.APP_DEBUG)
+    app.run_server(port=sets.APP_PORT, debug=sets.APP_DEBUG)

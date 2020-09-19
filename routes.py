@@ -1,4 +1,4 @@
-from pages import dashboard, analytics, contact
+from pages import dashboard, analytics, about
 from utils.extensions import route
 
 
@@ -7,6 +7,6 @@ routes = [
           content=dashboard.content),
     route(name='Analytics', path='/analytics',
           content=analytics.content),
-    route(name='Contact', path='/contact',
-          content=contact.content),
+    route(name='About', path='/about',
+          content=about.content),
 ]
