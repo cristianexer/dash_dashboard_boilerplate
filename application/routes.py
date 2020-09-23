@@ -1,7 +1,6 @@
 from pages import dashboard, analytics, about
 from utils.extensions import route
 
-
 routes = [
     route(name='Dashboard', path='/',
           content=dashboard.content),

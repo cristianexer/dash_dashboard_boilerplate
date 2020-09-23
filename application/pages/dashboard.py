@@ -1,9 +1,10 @@
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
+from server import app
 from datetime import datetime as dt
+import dash
 import re
-from main_app import app
 
 content = html.Div([
     html.Div([
@@ -27,7 +28,7 @@ content = html.Div([
 ])
 
 
-@callback(
+@app.callback(
     dash.dependencies.Output('output-container-date-picker-range', 'children'),
     [dash.dependencies.Input('date-range-map', 'start_date'),
      dash.dependencies.Input('date-range-map', 'end_date')])
